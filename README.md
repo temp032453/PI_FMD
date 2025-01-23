@@ -1,6 +1,16 @@
 #  Property Inference Attacks on FedMD via Synthetic Data Generation
-Code for the paper PI-FMD : Property Inference Attacks on FedMD via Synthetic Data Generation.
+## Code for the paper "PI-FMD : Property Inference Attacks on FedMD via Synthetic Data Generation."
 
+## file structure
+```markdown
+├── run_attack.py      # Main script for executing the attack
+├── dataset/           # Folder containing datasets
+├── models/            # Pre-trained model files
+├── profinf/           # Attackunitl or data preprocessing files
+└── README.md          # This documentation
+```
+
+## Each of the Arguments
 ```shell
   -dat DATASET, --dataset DATASET
                         dataset name : [adult, bank, census]
@@ -36,10 +46,11 @@ Code for the paper PI-FMD : Property Inference Attacks on FedMD via Synthetic Da
                         make inference with piwp
 ```
 
+## Experiment Command Examples
 ```shell 
 ## adult
-python run_attack.py -tp="[(workclass, Private)]" -pp=1.0 -t0=0.2 -t1=0.5 -e 50 -d 0 -m 0 -tpub 1.0
-python run_attack.py  -tp="[(race, White),(sex, Male)]" -p="[0.15]" -t0=0.15 -t1=0.40 -pp=1.0 -d 1 -m 0 -e 50 -tpub 1.0
-python run_attack.py -tp="[(sex, Female),(occupation, Sales)]" -p="[0.01]" -t0=0.01 -t1=0.035 -d 2 -m 0 -pp 1.0 -e 50 -m 0 -tpub 1.0
-python run_attack.py -tp="[(marital-status, Divorced),(sex, Male)]" -t0=0.01 -t1=0.05 -d 2 -e 50 -pp=1.0 -m 0 -tpub 1.0
+$ python run_attack.py -tp="[(workclass, Private)]" -t0=0.2 -t1=0.5 -e 50 -tpub 1.0 -pp=1.0 -d 0 
+$ python run_attack.py -tp="[(race, White),(sex, Male)]" -t0=0.15 -t1=0.40 -e 50 -tpub 1.0 -pp=1.0 -d 1 
+$ python run_attack.py -tp="[(sex, Female),(occupation, Sales)]" -t0=0.01 -t1=0.035 -e 50 -tpub 1.0 -pp 1.0 -d 2 
+$ python run_attack.py -tp="[(marital-status, Divorced),(sex, Male)]" -t0=0.01 -t1=0.05 -e 50 -tpub 1.0 -pp=1.0 -d 2 
 ```
