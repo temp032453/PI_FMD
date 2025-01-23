@@ -1,5 +1,5 @@
 #  Property Inference Attacks on FedMD via Synthetic Data Generation
-## Code for the paper "PI-FMD : Property Inference Attacks on FedMD via Synthetic Data Generation."
+Code for the paper "PI-FMD : Property Inference Attacks on FedMD via Synthetic Data Generation."
 
 ## file structure
 ```markdown
