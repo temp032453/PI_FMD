@@ -48,9 +48,19 @@ Code for the paper "PI-FMD : Property Inference Attacks on FedMD via Synthetic D
 
 ## Experiment Command Examples
 ```shell 
-## adult
-$ python run_attack.py -tp="[(workclass, Private)]" -t0=0.2 -t1=0.5 -e 50 -tpub 1.0 -pp=1.0 -d 0 
-$ python run_attack.py -tp="[(race, White),(sex, Male)]" -t0=0.15 -t1=0.40 -e 50 -tpub 1.0 -pp=1.0 -d 1 
-$ python run_attack.py -tp="[(sex, Female),(occupation, Sales)]" -t0=0.01 -t1=0.035 -e 50 -tpub 1.0 -pp 1.0 -d 2 
-$ python run_attack.py -tp="[(marital-status, Divorced),(sex, Male)]" -t0=0.01 -t1=0.05 -e 50 -tpub 1.0 -pp=1.0 -d 2 
+## adult (baseline)
+python run_attack.py -tp="[(workclass, Private)]" -t0=0.2 -t1=0.4 -e 50 -d 0 -m 0 -tpub 1.5 -pw 2
+python run_attack.py  -tp="[(race, White),(sex, Male)]" -t0=0.10 -t1=0.3 -d 0 -m 0 -e 50 -tpub 2 -pw 2 
+python run_attack.py -tp="[(occupation, Craft-repair)]" -t0=0.02 -t1=0.08 -d 0 -m 0 -e 50 -m 0 -tpub 3 -pw 2 
+python run_attack.py -tp="[(marital-status, Divorced),(sex, Male)]" -t0=0.01 -t1=0.05 -d 1 -e 50 -tpub 3 -pw 2
+
+```
+
+```shell
+## adult (ours)
+python run_attack.py -tp="[(workclass, Private)]" -t0=0.2 -t1=0.4 -e 50 -d 0 -m 0 -tpub 1.5 -pw 2 -pds
+python run_attack.py  -tp="[(race, White),(sex, Male)]" -t0=0.10 -t1=0.3 -d 0 -m 0 -e 50 -tpub 2 -pw 2 -pds
+python run_attack.py -tp="[(occupation, Craft-repair)]" -t0=0.02 -t1=0.08 -d 0 -m 0 -e 50 -m 0 -tpub 3 -pw 2 -pds
+python run_attack.py -tp="[(marital-status, Divorced),(sex, Male)]" -t0=0.01 -t1=0.05 -d 1 -e 50 -tpub 3 -pw 2 -pds
+
 ```
